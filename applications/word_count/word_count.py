@@ -1,5 +1,21 @@
+import re
+
 def word_count(s):
     # Your code here
+    cache = {}
+    foo = re.sub("'", "", s)
+    str = re.sub('\W+', ' ', foo)
+    sep = str.split()
+    
+    for i in sep:
+        x = i.lower()
+        if x in cache:
+            cache[x] += 1
+        else:
+            if x == "doesnt":
+                x = "doesn't"
+            cache[x] = 1
+    return cache
 
 
 

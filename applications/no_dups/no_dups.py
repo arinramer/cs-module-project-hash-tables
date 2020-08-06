@@ -1,5 +1,23 @@
+
+
 def no_dups(s):
     # Your code here
+    cache = {}
+    if s == "":
+        return ""
+    str = s.split()
+    for i in str:
+        if i not in cache:
+            cache[i] = 1
+        else:
+            cache[i] += 1
+    
+    newlist = []
+    for i in cache.keys():
+        if i is not None:
+            newlist.append(i)
+    str1 = " ".join(newlist)
+    return str1
 
 
 
